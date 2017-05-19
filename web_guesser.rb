@@ -8,8 +8,10 @@ get '/' do
 # Line Below: renders the ERB template named 'index' and creates a local variable for the template named 'number' which has the same value as the 'number' variable from this server code.
 #	erb :index, :locals => {:number => number, :message => message}  # the first 'number' is the name of the variable in the index.erb file, the second 'number' is the number variable being referenced in this web_guesser.rb file
 # throw params.inspect # This line helps to debug what the key/value pair is for the guess
-	if params["guess"] != nil
-		guess_int = params["guess"].to_i
+	guess = params["guess"]
+	#throw guess #returns nil when no guess has been made
+	if guess != nil
+		guess_int = guess.to_i
 		if guess_int > number + 5
 			message = "Nope, that's way too high!  Guess again!"
 		elsif guess_int > number
