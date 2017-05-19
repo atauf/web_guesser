@@ -3,8 +3,13 @@
 	<title></title>
 </head>
 <body>
-<p>
-	The SECRET NUMBER is <%= number %>
-</p>
+	<div>
+		<%= message %>
+	</div>
+	<form>
+		<input type="text" name="guess" />  <!--'guess' becomes the key name in the key/value pair -->
+		<input type="submit" value="Guess!" />
+	</form>
+	<!--The SECRET NUMBER is <%= number %> -->
 </body>
 </html>
